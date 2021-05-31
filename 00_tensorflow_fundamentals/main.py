@@ -128,3 +128,35 @@ print("_________________________________________________________________________
 
 # shuffle our non-shuffled tensor
 print(tf.random.shuffle(not_shuffled))
+print("_______________________________________________________________________________________________________________")
+
+########################################################################################################################
+# Other ways to make tensors
+########################################################################################################################
+
+# Create a tensor of all ones
+print(tf.ones([10, 7]))
+print("_______________________________________________________________________________________________________________")
+
+# Create a tensor with all zeroes
+print(tf.zeros([10, 7]))
+print("_______________________________________________________________________________________________________________")
+
+# You can also turn NumPy arrays into tensors
+"""
+The main difference between NumPy arrays and TensorFlow tenors is that tensors can be run on a GPU (much faster for numerical computing).
+"""
+import numpy as np
+
+numpy_A = np.arange(1, 25, dtype=np.int32)  # Create a NumPy array between 1 and 25
+print(numpy_A)
+print("_______________________________________________________________________________________________________________")
+A = tf.constant(numpy_A)
+print(A)
+print("_______________________________________________________________________________________________________________")
+B = tf.constant(numpy_A, shape=(2, 3, 4))
+print(B)
+print("_______________________________________________________________________________________________________________")
+
+# X = tf.constant(some_matrix) # capital for matrix or tensor
+# y = tf.constant(vector) #non-capital for vector
