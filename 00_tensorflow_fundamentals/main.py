@@ -92,5 +92,24 @@ print("_________________________________________________________________________
 # unchangeable_tensor[0].assign(7)
 # print(unchangeable_tensor)
 # print("_______________________________________________________________________________________________________________")
-#----------
 
+"""
+Note: Rarely in practice will you need to decide whether to use tf.constant or tf.Variable to create tensors,
+as TensorFlow dies this for you. However, if in doubt, use tf.constant and change it later if needed.
+"""
+########################################################################################################################
+# Create Random tensors
+########################################################################################################################
+
+# Random tensors are tensors of some arbitrary size which contain random number.
+
+# Create two random tensors
+random_1 = tf.random.Generator.from_seed(42)  # set seed for reproducibility
+random_1 = random_1.normal(shape=(3, 2))
+random_2 = tf.random.Generator.from_seed(42)
+random_2 = random_2.normal(shape=(3, 2))
+# Are they equal?
+print(random_1)
+print(random_2)
+print(random_1 == random_2)
+print("_______________________________________________________________________________________________________________")
