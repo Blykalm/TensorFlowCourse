@@ -113,3 +113,18 @@ print(random_1)
 print(random_2)
 print(random_1 == random_2)
 print("_______________________________________________________________________________________________________________")
+
+########################################################################################################################
+# Shuffle the order of elements in a tensor
+########################################################################################################################
+
+# Shuffle a tensor (Valuable for when you want to shuffle your data so the inherit order doesn't effect learning)
+not_shuffled = tf.constant([[10, 7],
+                            [3, 4],
+                            [2, 5]])
+print(not_shuffled.ndim)
+print(not_shuffled)
+print("_______________________________________________________________________________________________________________")
+
+# shuffle our non-shuffled tensor
+print(tf.random.shuffle(not_shuffled))
