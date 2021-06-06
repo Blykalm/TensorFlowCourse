@@ -192,3 +192,34 @@ print("Total number of elements in our tensor:", tf.size(rank_4_tensor))
 print("Total number of elements in our tensor:", tf.size(rank_4_tensor).numpy())
 print("_______________________________________________________________________________________________________________")
 
+########################################################################################################################
+# Index and expand tensors
+########################################################################################################################
+# Tensors can be indexed just like python lists
+
+# Get the first 2 elements of each dimension
+print(rank_4_tensor[:2, :2, :2, :2])
+print("_______________________________________________________________________________________________________________")
+
+# Get the first element from each dimension from each index except for the final one
+print(rank_4_tensor[:1, :1, :1, :])
+print("_______________________________________________________________________________________________________________")
+
+# Create a rank 2 tensor (2 dimensions)
+rank_2_tensor = tf.ones(shape=[2, 2])
+print(rank_2_tensor)
+print(rank_2_tensor.ndim)
+print("_______________________________________________________________________________________________________________")
+
+# Get the last item of each row of our rank 2 tensor
+print(rank_2_tensor[:, :-1])
+print("_______________________________________________________________________________________________________________")
+
+# Add in extra dimension to our rank 2 tensor
+rank_3_tensor = rank_2_tensor[..., tf.newaxis]
+print(rank_3_tensor)
+print("_______________________________________________________________________________________________________________")
+
+# Alternative to tf.newaxis
+print(tf.expand_dims(rank_2_tensor, axis=-1))  # "-1" means expand the final axis
+print("_______________________________________________________________________________________________________________")
