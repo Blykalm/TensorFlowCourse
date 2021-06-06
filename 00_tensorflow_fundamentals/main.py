@@ -160,3 +160,35 @@ print("_________________________________________________________________________
 
 # X = tf.constant(some_matrix) # capital for matrix or tensor
 # y = tf.constant(vector) #non-capital for vector
+
+########################################################################################################################
+# Gather data from our tensors.
+########################################################################################################################
+"""
+When dealing with tensors you probably want to be aware of the following attributes:
+* shape
+* Rank
+* Axis or dimension
+* Size
+"""
+
+# Create a rank 4 tensor (4 dimensions)
+
+rank_4_tensor = tf.zeros(shape=[2, 3, 4, 5])
+print(rank_4_tensor)
+print("_______________________________________________________________________________________________________________")
+print(rank_4_tensor.shape)
+print(rank_4_tensor.ndim)
+print(tf.size(rank_4_tensor))
+print("_______________________________________________________________________________________________________________")
+
+# Get various attributes of our tensor
+print("Datatype of every element:", rank_4_tensor.dtype)
+print("Number fo dimensions (rank):", rank_4_tensor.ndim)
+print("Shape of tensor:", rank_4_tensor.shape)
+print("Elements along the 0 axis:", rank_4_tensor.shape[0])
+print("Elements along the last axis:", rank_4_tensor.shape[-1])
+print("Total number of elements in our tensor:", tf.size(rank_4_tensor))
+print("Total number of elements in our tensor:", tf.size(rank_4_tensor).numpy())
+print("_______________________________________________________________________________________________________________")
+
