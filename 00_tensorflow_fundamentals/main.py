@@ -312,3 +312,37 @@ print("_______________________________________________41________________________
 
 # Try matrix multiplication with transpose rather than reshape
 print(tf.matmul(tf.transpose(x), y))
+
+"""
+*The dot product*
+
+Matrix multiplication is also referred to as the dot product
+
+you can perform matrix multiplication using:
+'tf.matmul()' or
+'tf.tensordot()'
+"""
+# perform the dot product on x and y (requires x or y to be transposed)
+print(x, y)
+print(tf.tensordot(tf.transpose(x), y, axes=1))
+print("_______________________________________________42______________________________________________________________")
+
+# Perform matrix multiplication between x an y (transposed)
+print(tf.matmul(x, tf.transpose(y)))
+print("_______________________________________________43______________________________________________________________")
+
+# Perform matrix multiplication between x and y (reshaped)
+print(tf.matmul(x, tf.reshape(y, shape=(2, 3))))
+print("_______________________________________________44______________________________________________________________")
+
+# Check the values of y, reshape y and transposed y
+print("normal y: ", y , "\n")
+print("reshaped y: ", tf.reshape(y, shape=(2, 3)), "\n")
+print("transposed y: ", tf.transpose(y))
+print("_______________________________________________45______________________________________________________________")
+
+"""
+** Generally, when performing matrix multiplication on two tensors and one of the axis doesn't line up,
+    you wil transpose (rather than reshape) one of the tensors to satisfy the matrix multiplication rules. **
+"""
+
