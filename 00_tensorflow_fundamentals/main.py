@@ -128,7 +128,7 @@ print("_______________________________________________12________________________
 
 # shuffle our non-shuffled tensor
 print(tf.random.shuffle(not_shuffled))
-print("_______________________________________________13_______________________________________________________________")
+print("_______________________________________________13______________________________________________________________")
 
 ########################################################################################################################
 # Other ways to make tensors
@@ -256,4 +256,36 @@ print("_______________________________________________32________________________
 ########################################################################################################################
 # Matrix Multiplication
 ########################################################################################################################
+"""
+in machine learning, matrix multiplication is one of them ost common tensor operations
+
+There are 2 rules our tensors (or matrices) need ot fulfil if we're going to matrix multiply them:
+1. The inner dimensions must match
+2. The resulting matrix has the shape of the inner dimensions
+"""
+# **resource** info and example of matrix multiplication: https://www.mathsisfun.com/algebra/matrix-multiplying.html
+
+print(tensor)
+print("_______________________________________________33______________________________________________________________")
+print(tf.matmul(tensor, tensor))
+print("_______________________________________________34______________________________________________________________")
+
+# matrix multiplication with python operator "@"
+print(tensor @ tensor)
+print("_______________________________________________35______________________________________________________________")
+
+# create a tensor (3, 2) tensor.
+x = tf.constant([[1, 2],
+                 [3, 4],
+                 [5, 6]])
+# create another (3, 2) tensor.
+y = tf.constant([[7, 8],
+                 [9, 10],
+                 [11, 12]])
+print(x, y)
+print("_______________________________________________36______________________________________________________________")
+
+# Try to multiply tensors of same shape
+print(x @ y)
+
 
