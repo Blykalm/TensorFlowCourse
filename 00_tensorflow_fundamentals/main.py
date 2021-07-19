@@ -261,7 +261,7 @@ in machine learning, matrix multiplication is one of them ost common tensor oper
 
 There are 2 rules our tensors (or matrices) need ot fulfil if we're going to matrix multiply them:
 1. The inner dimensions must match
-2. The resulting matrix has the shape of the inner dimensions
+2. The resulting matrix has the shape of the outer dimensions
 """
 # **resource** info and example of matrix multiplication: https://www.mathsisfun.com/algebra/matrix-multiplying.html
 
@@ -286,6 +286,29 @@ print(x, y)
 print("_______________________________________________36______________________________________________________________")
 
 # Try to multiply tensors of same shape
-print(x @ y)
+# this code will give you a error
+# print(x @ y)
 
+# Let's change the shape of y
+print(tf.reshape(y, shape=(2, 3)))
+print("_______________________________________________37______________________________________________________________")
 
+# Try to matrix multiplication x by reshaped y
+reshapey = tf.reshape(y, shape=(2, 3))
+print(x @ reshapey)
+print("_______________________________________________38______________________________________________________________")
+
+print(tf.matmul(x, reshapey))
+print("_______________________________________________39______________________________________________________________")
+
+# Try to change the shape of x instead of y
+reshapex = tf.reshape(x, shape=(2, 3))
+print(tf.matmul(reshapex, y))
+print("_______________________________________________40______________________________________________________________")
+
+# Can do the same with transpose
+print(tf.transpose(x))
+print("_______________________________________________41______________________________________________________________")
+
+# Try matrix multiplication with transpose rather than reshape
+print(tf.matmul(tf.transpose(x), y))
