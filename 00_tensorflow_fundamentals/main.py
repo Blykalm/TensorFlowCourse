@@ -368,3 +368,60 @@ print("_______________________________________________48________________________
 e = tf.cast(c, dtype=tf.float32)
 print(e)
 print("_______________________________________________49______________________________________________________________")
+
+########################################################################################################################
+# Aggregating Tensors
+########################################################################################################################
+"""
+Aggregating tensors = condensing them from multiple values down to a smaller amount of values. 
+"""
+
+# Create a new tensor
+d = tf.constant([-7, -10])
+print(d)
+print("_______________________________________________50______________________________________________________________")
+
+# Get the absolute values
+print(tf.abs(d))
+print("_______________________________________________51______________________________________________________________")
+
+"""
+lets go through the following forms of aggregation:
+* Get the minimum
+* Get the maximum
+* Get the mean of a tensor
+* Get the sum of a tensor
+"""
+
+# Create a random tensor with values between 0 and 100 of size 50
+x = tf.constant(np.random.randint(0, 100, size=50))
+print(x)
+print(tf.size(x), tf.shape(x), x.ndim)
+print("_______________________________________________52______________________________________________________________")
+
+# Find the minimum
+z = tf.reduce_min(x)
+print(z)
+print("_______________________________________________53______________________________________________________________")
+
+# Find the maximum
+z = tf.reduce_max(x)
+print(z)
+print("_______________________________________________54______________________________________________________________")
+
+# Find the mean
+z = tf.reduce_mean(x)
+print(z)
+print("_______________________________________________55______________________________________________________________")
+
+# Find the sum
+z = tf.reduce_sum(x)
+print(z)
+print("_______________________________________________56______________________________________________________________")
+
+# **Exercise:** With what we've just learned, find the variance and standard deviation of our x tensor using tensorflow
+# Note: to use the variance and std the input tensor needs to be real, so you need to change the datatype to float
+z = tf.cast(x, dtype=tf.float16)
+print(tf.math.reduce_variance(z))
+print(tf.math.reduce_std(z))
+print("_______________________________________________57______________________________________________________________")
