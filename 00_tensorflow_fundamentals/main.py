@@ -425,3 +425,35 @@ z = tf.cast(x, dtype=tf.float16)
 print(tf.math.reduce_variance(z))
 print(tf.math.reduce_std(z))
 print("_______________________________________________57______________________________________________________________")
+
+########################################################################################################################
+# Find the positional max and min of a tensor
+########################################################################################################################
+
+# create a new tensor for finding positional minimum and maximum
+tf.random.set_seed(42)
+f = tf.random.uniform(shape=[50])
+print(f)
+print("_______________________________________________58______________________________________________________________")
+
+# Find the positional maximum
+print(tf.argmax(f))
+print("_______________________________________________59______________________________________________________________")
+
+# Index on our largest value
+print(f[tf.argmax(f)])
+print("_______________________________________________60______________________________________________________________")
+
+# Find the max value of F
+print(tf.reduce_max(f))
+print("_______________________________________________61______________________________________________________________")
+
+# Check for equality
+print(f[tf.argmax(f)] == tf.reduce_max(f))
+print("_______________________________________________62______________________________________________________________")
+
+# Find the positional minimum
+print(tf.argmin(f))
+# Find the minimum using the positional minimum index
+print(f[tf.argmin(f)])
+
