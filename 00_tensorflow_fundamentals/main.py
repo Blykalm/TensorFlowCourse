@@ -472,3 +472,15 @@ g_squeezed = tf.squeeze(g)
 print(g_squeezed, g_squeezed.shape)
 print("_______________________________________________65______________________________________________________________")
 
+########################################################################################################################
+# One-hot encoding tensors
+########################################################################################################################
+
+# Create a list of indices
+some_list = [0, 1, 2, 3]  # could be red, green, blue, purple
+
+# One-hot encode our list of indices
+print(tf.one_hot(some_list, 4))
+
+# Specify custom values for one hot encoding
+print(tf.one_hot(some_list, 4, "*", "x"))
